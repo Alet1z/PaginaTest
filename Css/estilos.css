@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Estilos generales del cuerpo y navegación */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+  position: fixed; /* Fija el encabezado */
+  width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+  top: 0; /* Posición en la parte superior */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.navbar {
+  display: flex; /* Cambia a flexbox para alinear en horizontal */
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: space-between; /* Espaciado entre elementos */
+  padding: 0 20px; /* Espaciado interno */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Alinea la lista en horizontal */
+}
+
+nav ul li {
+  margin: 0 15px;
+  position: relative; /* Necesario para el submenú */
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+nav ul li.has-submenu {
+  cursor: pointer; /* Indica que es clickeable */
+}
+
+.arrow {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+nav ul li:hover .submenu {
+  display: block; /* Muestra el submenú al pasar el cursor */
+}
+
+.submenu {
+  display: none; /* Inicialmente oculto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  z-index: 1;
+  padding: 10px 0;
+}
+
+.submenu li {
+  margin: 0;
+}
+
+.submenu a {
+  padding: 10px 20px;
+  display: block;
+  color: white;
+}
+
+.submenu a:hover {
+  background-color: #555; /* Color al pasar el cursor */
+}
+
+main {
+  padding: 80px 20px; /* Espacio superior para evitar que el contenido quede oculto */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+section {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para tarjetas */
+}
+
+section img {
+  max-width: 100%; /* Mantiene la proporción de la imagen */
+  height: auto; /* Asegura que la imagen no se estire */
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #fdfdfd;
+  color: rgb(0, 0, 0);
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+}
+
+main section a {
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+main section a:hover {
+  background-color: #0056b3; /* Color del botón al pasar el cursor */
+}
+
+.search-container {
+  margin: 0 15px;
+}
+
+.search-container input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 150px; /* Ajusta el ancho de la barra de búsqueda */
+}
+
+.menu-toggle {
+  display: none; /* Se ocultará en pantallas grandes */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Se oculta en pantallas pequeñas */
+    position: absolute; /* Posición absoluta para el menú móvil */
+    top: 50px; /* Ajusta la posición del menú */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    text-align: center; /* Centra el texto del menú */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .nav-list.open {
+    display: block; /* Muestra el menú cuando está abierto */
+  }
+  
+  .menu-toggle {
+    display: flex; /* Se muestra en pantallas pequeñas */
+  }
+  
+  main {
+    grid-template-columns: 1fr; /* En móviles, vuelve a una sola columna */
+  }
+}
+
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
